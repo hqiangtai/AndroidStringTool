@@ -83,6 +83,7 @@
     <Compile Include="utils\ExcelUtils.cs" />
     <Compile Include="utils\FileUtils.cs" />
     <Compile Include="utils\LocalUtils.cs" />
+    <Compile Include="utils\XmlOpertor.cs" />
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>

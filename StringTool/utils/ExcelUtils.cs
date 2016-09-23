@@ -7,6 +7,7 @@ namespace StringTool.utils
 {
     class ExcelUtils
     {
-
+        public void readExcel(string excel) { 
+        }
     }
 }
