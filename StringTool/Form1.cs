@@ -74,6 +74,27 @@ namespace StringTool
         
             return false;
         }
+        bool pointInPolygon(int polyCorners,int x,int y)
+        {
+            int[] polyY=null,polyX=null;
+            int i, j = polyCorners - 1;
+            bool oddNodes = false;
+
+            for (i = 0; i < polyCorners; i++)
+            {
+                if (polyY[i] < y && polyY[j] >= y
+                || polyY[j] < y && polyY[i] >= y)
+                {
+                    if (polyX[i] + (y - polyY[i]) / (polyY[j] - polyY[i]) * (polyX[j] - polyX[i]) < x)
+                    {
+                        oddNodes = !oddNodes;
+                    }
+                }
+                j = i;
+            }
+
+            return oddNodes;
+        }
 
         private void changExportVisual() {
             export_button.Visible = checkFileAndFlode();

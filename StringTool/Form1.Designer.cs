@@ -53,6 +53,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button_create_src = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -241,6 +242,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.Controls.Add(this.button_create_src);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.textBox3);
@@ -281,10 +283,10 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(872, 9);
+            this.button3.Location = new System.Drawing.Point(761, 8);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 27);
+            this.button3.Size = new System.Drawing.Size(115, 27);
             this.button3.TabIndex = 5;
             this.button3.Text = "选择excel文件";
             this.button3.UseVisualStyleBackColor = true;
@@ -298,7 +300,7 @@
             this.textBox3.Location = new System.Drawing.Point(10, 11);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(854, 23);
+            this.textBox3.Size = new System.Drawing.Size(743, 23);
             this.textBox3.TabIndex = 4;
             // 
             // menuStrip1
@@ -357,6 +359,17 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(32, 17);
             this.toolStripStatusLabel1.Text = "开始";
+            // 
+            // button_create_src
+            // 
+            this.button_create_src.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_create_src.Location = new System.Drawing.Point(881, 8);
+            this.button_create_src.Margin = new System.Windows.Forms.Padding(4);
+            this.button_create_src.Name = "button_create_src";
+            this.button_create_src.Size = new System.Drawing.Size(115, 27);
+            this.button_create_src.TabIndex = 7;
+            this.button_create_src.Text = "生成资源包";
+            this.button_create_src.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -426,6 +439,7 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView_excel_preview;
+        private System.Windows.Forms.Button button_create_src;
     }
 }
 
