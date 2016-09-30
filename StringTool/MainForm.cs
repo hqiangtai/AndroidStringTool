@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace StringTool
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -96,14 +96,12 @@ namespace StringTool
             return oddNodes;
         }
 
-        private void changExportVisual() {
-            export_button.Visible = checkFileAndFlode();
-        }
-        private AboutBox1 aboutBox;
+        
+        private AboutBox aboutBox;
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(aboutBox==null )
-              aboutBox = new AboutBox1();
+              aboutBox = new AboutBox();
 
             aboutBox.ShowDialog();
 
@@ -118,7 +116,6 @@ namespace StringTool
             acCode.Name = "default_value";
             acCode.DataPropertyName = "default_value";
             acCode.HeaderText = " 默认资源";
-           
             dataGridView_preview.Columns.Add(acCode);
         }
 
@@ -138,34 +135,33 @@ namespace StringTool
                      );
              }
         }
-        private void createColum(string colName,string headerTxt ) {
-            DataGridViewTextBoxColumn acCode = new DataGridViewTextBoxColumn();
-            acCode.Name = colName;
-            acCode.DataPropertyName = colName;
-            acCode.HeaderText = headerTxt;
-            dataGridView_preview.Columns.Add(acCode);
-        }
+     
         private void createColumArray() {
             if (checkFileAndFlode())
             {
                 List<DirectoryInfo> dirList = FileUtils.getDirs(textBox_resflode.Text.Trim(),  "values*");
-                if (dirList.Count <= 0)
+                if (dirList.Count < 1)
                 {
-                    MessageBox.Show("该资源文件夹内不存在资源文件");
+                    MessageBox.Show("该文件夹内不存在资源文件");
                 }
                 else
                 {
+                    ExportWorker worker = new ExportWorker();
                     foreach(DirectoryInfo dir in dirList){
+                        if (!FileUtils.checkIncludeString(dir))
+                        {
+                            continue;
+                        }
                         if (dir.Name.Equals("values"))
                         {
-                            createColum(dir.Name,"默认资源"); 
+                            new ExportWorker().readDir2GridView(dir.FullName, dataGridView_preview);
+                            worker.createColum(dir.Name, "默认资源",dataGridView_preview); 
                         }
-                        else { 
-                            createColum(dir.Name, dir.Name); 
+                        else {
+                            worker.createColum(dir.Name, dir.Name,dataGridView_preview); 
                         }
-                        
+                       
                     }
-                    
                 }
             }
         }
@@ -178,6 +174,22 @@ namespace StringTool
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+ 
+
+        private void button_create_src_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("您是否在导入资进行检查?", "退出系统", MessageBoxButtons.YesNoCancel);
+            switch (dr) { 
+                case DialogResult.OK:
+                    
+                    break;
+                case DialogResult.Cancel:
+                    break;
+                case DialogResult.No:
+                    /////直接导入
+                    break;
+            }
         }
     }
 }

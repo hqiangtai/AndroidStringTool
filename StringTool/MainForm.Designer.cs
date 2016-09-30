@@ -1,6 +1,6 @@
 ﻿namespace StringTool
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -42,6 +42,7 @@
             this.dataGridView_preview = new System.Windows.Forms.DataGridView();
             this.KeyNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button_create_src = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView_excel_preview = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button_create_src = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -158,6 +158,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "选择资源路径";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox_resflode
             // 
@@ -253,6 +254,18 @@
             this.tabPage2.Size = new System.Drawing.Size(1000, 509);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "从excel导入";
+            // 
+            // button_create_src
+            // 
+            this.button_create_src.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_create_src.Location = new System.Drawing.Point(881, 8);
+            this.button_create_src.Margin = new System.Windows.Forms.Padding(4);
+            this.button_create_src.Name = "button_create_src";
+            this.button_create_src.Size = new System.Drawing.Size(115, 27);
+            this.button_create_src.TabIndex = 7;
+            this.button_create_src.Text = "生成资源包";
+            this.button_create_src.UseVisualStyleBackColor = true;
+            this.button_create_src.Click += new System.EventHandler(this.button_create_src_Click);
             // 
             // groupBox3
             // 
@@ -359,17 +372,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(32, 17);
             this.toolStripStatusLabel1.Text = "开始";
-            // 
-            // button_create_src
-            // 
-            this.button_create_src.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_create_src.Location = new System.Drawing.Point(881, 8);
-            this.button_create_src.Margin = new System.Windows.Forms.Padding(4);
-            this.button_create_src.Name = "button_create_src";
-            this.button_create_src.Size = new System.Drawing.Size(115, 27);
-            this.button_create_src.TabIndex = 7;
-            this.button_create_src.Text = "生成资源包";
-            this.button_create_src.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
